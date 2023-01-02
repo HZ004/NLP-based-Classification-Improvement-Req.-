@@ -25,19 +25,13 @@ import tensorflow as tf
 import keras
 import numpy as np
 import pandas as pd
-from keras.models import Sequential
-from keras import layers
-from keras.optimizers import RMSprop,Adam
-from keras.preprocessing.text import Tokenizer
-from keras_preprocessing.sequence import pad_sequences
-from keras import regularizers
-from keras import backend as K
-from keras.callbacks import ModelCheckpoint
-max_words = 5000
-max_len = 200
 
 url = 'https://github.com/HZ004/Project-NLP/blob/main/Product_details.csv?raw=true'
 train = pd.read_csv(url)
+
+inputpd = 'Umm. Hello!! What about Android?! RT @mention Awesome new version of @mention for iPhone and new web site coming after #sxsw.'
+inputpc = 7
+train.loc[len(train.index)] = [1234,inputpd, inputpc, 2]
 
 def depure_data(data):
     
@@ -62,9 +56,8 @@ def depure_data(data):
     return data
 
 temp = []
-
+#Splitting pd.Series to list
 data_to_list = train['Product_Description'].values.tolist()
-
 for i in range(len(data_to_list)):
     temp.append(depure_data(data_to_list[i]))
 
@@ -92,6 +85,18 @@ x = np.array(train['Product_Type'])
 category = tf.keras.utils.to_categorical(x, 10, dtype="float32")
 del x
 
+from keras.models import Sequential
+from keras import layers
+from keras.optimizers import RMSprop,Adam
+from keras.preprocessing.text import Tokenizer
+from keras_preprocessing.sequence import pad_sequences
+from keras import regularizers
+from keras import backend as K
+from keras.callbacks import ModelCheckpoint
+max_words = 5000
+max_len = 200
+
+
 tokenizer = Tokenizer(num_words=max_words)
 tokenizer.fit_on_texts(data)
 sequences = tokenizer.texts_to_sequences(data)
@@ -100,10 +105,15 @@ reviews = pad_sequences(sequences, maxlen=max_len)
 # add category to reviews here
 reviews = np.append(reviews,category, axis=1)
 
+#Splitting the data
+X_train, X_test, y_train, y_test = train_test_split(reviews,labels,test_size=1, train_size=6364, random_state=42)
+
+#Let's load the best model obtained during training
 best_model = keras.models.load_model("best_model1.hdf5")
 
-predictions = best_model.predict(input)
+predictions = best_model.predict(X_test)
 
+predictions
 
-
+print(np.argmax(predictions))
 
