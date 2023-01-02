@@ -9,3 +9,5 @@ tensorflow
 keras
 numpy
 pandas
+streamlit
+streamlib
