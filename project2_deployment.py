@@ -31,7 +31,7 @@ def add_bg_from_url():
          f"""
          <style>
          .stApp {{
-             background-image: url("https://i.ytimg.com/vi/-oubxE9WdjI/maxresdefault.jpg");
+             background-image: url("https://miro.medium.com/max/925/1*E1haIGB9K4K89PsFZgm-pw.jpeg");
              background-attachment: fixed;
 	     background-position: 25% 75%;
              background-size: cover
@@ -43,7 +43,7 @@ def add_bg_from_url():
 
 add_bg_from_url()
 
-st.title('<p style="font-family:Courier; color:White; font-size: 42px;">Model Deployment: Classification</p>')
+st.title('Model Deployment: Classification')
 st.sidebar.header('Input Product Description and Product Category')
 
 
