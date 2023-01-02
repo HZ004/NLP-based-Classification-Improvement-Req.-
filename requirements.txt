@@ -5,7 +5,7 @@ collection
 wordcloud
 gensim
 spacy
-sklearn
+scikit-learn
 tensorflow
 keras
 numpy
