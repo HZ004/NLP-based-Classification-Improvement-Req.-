@@ -31,7 +31,7 @@ def add_bg_from_url():
          f"""
          <style>
          .stApp {{
-             background-image: url("https://miro.medium.com/max/925/1*E1haIGB9K4K89PsFZgm-pw.jpeg");
+             background-image: url("https://wallpaperaccess.com/full/1325192.jpg");
              background-attachment: fixed;
 	     background-position: 25% 75%;
              background-size: cover
@@ -135,5 +135,5 @@ best_model = keras.models.load_model("best_model1.hdf5")
 
 predictions = best_model.predict(X_test)
 
-st.write(np.argmax(predictions))
+st.header('The predicted sentiment is: ',np.argmax(predictions))
 
