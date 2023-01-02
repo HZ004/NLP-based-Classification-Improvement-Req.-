@@ -1,6 +1,5 @@
 nltk
 regex
-strings
 collection
 wordcloud
 gensim
