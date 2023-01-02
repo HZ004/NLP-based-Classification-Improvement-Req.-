@@ -44,15 +44,14 @@ def add_bg_from_url():
 add_bg_from_url()
 
 st.title('Model Deployment: Classification')
-st.sidebar.header('Input Product Description and Product Category')
+st.header('Input Product Description and Product Category')
 
 
 url = 'https://github.com/HZ004/Project-NLP/blob/main/Product_details.csv?raw=true'
 train = pd.read_csv(url)
 
-inputpd = st.sidebar.text_input('Product Description', 'Umm. Hello!! What about Android?! RT @mention Awesome new version of @mention for iPhone and new web site coming after #sxsw.')
-#inputpd = 'Umm. Hello!! What about Android?! RT @mention Awesome new version of @mention for iPhone and new web site coming after #sxsw.'
-inputpc = st.sidebar.selectbox("Select any 1 from list",(0,1,2,3,4,5,6,7,8,9))
+inputpd = st.text_input('Product Description', 'Umm. Hello!! What about Android?! RT @mention Awesome new version of @mention for iPhone and new web site coming after #sxsw.')
+inputpc = st.selectbox("Select any 1 from list",(0,1,2,3,4,5,6,7,8,9))
 
 train.loc[len(train.index)] = [1234,inputpd, inputpc, 2]
 
