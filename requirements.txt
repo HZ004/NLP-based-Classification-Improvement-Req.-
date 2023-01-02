@@ -9,5 +9,5 @@ tensorflow
 keras
 numpy
 pandas
-streamlit
+streamlit==1.15.0
 streamlib
