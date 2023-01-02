@@ -89,7 +89,7 @@ from keras.models import Sequential
 from keras import layers
 from keras.optimizers import RMSprop,Adam
 from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 from keras import regularizers
 from keras import backend as K
 from keras.callbacks import ModelCheckpoint
