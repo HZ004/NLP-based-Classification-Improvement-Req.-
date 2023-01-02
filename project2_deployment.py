@@ -43,7 +43,7 @@ def add_bg_from_url():
 
 add_bg_from_url()
 
-st.title(' Model Deployment: Classification')
+st.title('<p style="font-family:Courier; color:White; font-size: 42px;">Model Deployment: Classification</p>')
 st.sidebar.header('Input Product Description and Product Category')
 
 
