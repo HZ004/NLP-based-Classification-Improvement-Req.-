@@ -111,7 +111,5 @@ best_model = keras.models.load_model("best_model1.hdf5")
 
 predictions = best_model.predict(X_test)
 
-predictions
-
-print(np.argmax(predictions))
+st.write(np.argmax(predictions))
 
