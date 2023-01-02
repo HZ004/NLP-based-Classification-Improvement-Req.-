@@ -44,7 +44,7 @@ def add_bg_from_url():
 add_bg_from_url()
 
 st.title('Model Deployment: Classification')
-st.header('Input Product Description and Product Category')
+st.header('Input Product Description and Product Type')
 
 
 url = 'https://github.com/HZ004/Project-NLP/blob/main/Product_details.csv?raw=true'
