@@ -1,5 +1,4 @@
 import re
-import matplotlib.pyplot as plt
 import string
 from nltk.corpus import stopwords
 import nltk
@@ -18,9 +17,7 @@ import spacy
 import pickle
 import warnings
 warnings.filterwarnings('ignore')
-import seaborn as sns
 from sklearn.metrics import confusion_matrix
-import matplotlib.pyplot as plt 
 import tensorflow as tf
 import keras
 import numpy as np
