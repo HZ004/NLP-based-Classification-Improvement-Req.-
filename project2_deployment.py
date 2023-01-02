@@ -27,8 +27,6 @@ import streamlit as st
 url = 'https://github.com/HZ004/Project-NLP/blob/main/Product_details.csv?raw=true'
 train = pd.read_csv(url)
 
-uploaded_file = st.file_uploader("Choose a file")
-
 inputpd = 'Umm. Hello!! What about Android?! RT @mention Awesome new version of @mention for iPhone and new web site coming after #sxsw.'
 inputpc = 7
 train.loc[len(train.index)] = [1234,inputpd, inputpc, 2]
@@ -109,11 +107,10 @@ reviews = np.append(reviews,category, axis=1)
 X_train, X_test, y_train, y_test = train_test_split(reviews,labels,test_size=1, train_size=6364, random_state=42)
 
 #Let's load the best model obtained during training
-best_model = keras.models.load_model(uploaded_file)
+best_model = keras.models.load_model("best_model1.hdf5")
 
 predictions = best_model.predict(X_test)
 
-#predictions = 'Hello'
 predictions
 
 print(np.argmax(predictions))
