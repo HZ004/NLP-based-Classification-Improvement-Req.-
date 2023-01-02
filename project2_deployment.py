@@ -136,4 +136,4 @@ best_model = keras.models.load_model("best_model1.hdf5")
 predictions = best_model.predict(X_test)
 
 
-st.header('The predicted sentiment is: {}'.format(np.argmax(predictions)))
+st.header('The predicted sentiment is:  {}'.format(np.argmax(predictions)))
