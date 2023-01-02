@@ -5,7 +5,7 @@ collections
 wordcloud
 gensim
 spacy
-from sklearn.metrics import confusion_matrix
+sklearn
 tensorflow
 keras
 numpy
