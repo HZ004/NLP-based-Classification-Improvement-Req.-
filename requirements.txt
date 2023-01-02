@@ -1,0 +1,12 @@
+nltk==3.7
+re
+string
+collections
+wordcloud
+gensim
+spacy
+from sklearn.metrics import confusion_matrix
+tensorflow
+keras
+numpy
+pandas
