@@ -25,7 +25,7 @@ import tensorflow as tf
 import keras
 import numpy as np
 import pandas as pd
-impost streamlit as st
+import streamlit as st
 
 url = 'https://github.com/HZ004/Project-NLP/blob/main/Product_details.csv?raw=true'
 train = pd.read_csv(url)
@@ -112,12 +112,12 @@ reviews = np.append(reviews,category, axis=1)
 X_train, X_test, y_train, y_test = train_test_split(reviews,labels,test_size=1, train_size=6364, random_state=42)
 
 #Let's load the best model obtained during training
-#best_model = keras.models.load_model(uploaded_file)
+best_model = keras.models.load_model(uploaded_file)
 
-#predictions = best_model.predict(X_test)
+predictions = best_model.predict(X_test)
 
-predictions = 'Hello'
+#predictions = 'Hello'
 predictions
 
-#print(np.argmax(predictions))
+print(np.argmax(predictions))
 
